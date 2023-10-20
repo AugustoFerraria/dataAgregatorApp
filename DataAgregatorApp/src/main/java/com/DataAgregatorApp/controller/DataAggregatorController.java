@@ -81,10 +81,4 @@ public class DataAggregatorController {
 	public ComuneDose getComuneConPiuSecondaDoseDaProvincia(@PathVariable("siglaProvince") String siglaProvince) {
 		return service.getComuneConPiuSecondaDoseDaProvincia(siglaProvince);
 	}
-	@GetMapping("/test")
-	public String test () {
-		System.out.println("TEST --------------------------------------------");
-		String value = "succesful test";
-		return value;
-	}
 }
