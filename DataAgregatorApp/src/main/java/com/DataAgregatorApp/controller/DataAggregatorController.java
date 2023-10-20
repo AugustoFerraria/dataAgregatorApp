@@ -83,6 +83,7 @@ public class DataAggregatorController {
 	}
 	@GetMapping("/test")
 	public String test () {
+		System.out.println("TEST --------------------------------------------");
 		String value = "succesful test";
 		return value;
 	}
