@@ -108,24 +108,4 @@ public class DataAggregatorService {
         return mongoTemplate.findOne(query, ComuneDose.class);
     }
 
-    public ComuneDose getComuneConMenoSecondaDose() {
-        Query query = new Query();
-        query.limit(1);
-        query.with(Sort.by("dose2").ascending());
-        return mongoTemplate.findOne(query, ComuneDose.class);
-    }
-
-    public ComuneDose getComuneConPiuPrimaDoseDaProvincia(String provincia) {
-        Query query = new Query(Criteria.where("sigla").is(provincia));
-        query.limit(1);
-        query.with(Sort.by("dose1").descending());
-        return mongoTemplate.findOne(query, ComuneDose.class);
-    }
-
-    public ComuneDose getComuneConPiuSecondaDoseDaProvincia(String provincia) {
-        Query query = new Query(Criteria.where("sigla").is(provincia));
-        query.limit(1);
-        query.with(Sort.by("dose2").descending());
-        return mongoTemplate.findOne(query, ComuneDose.class);
-    }
 }
